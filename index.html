@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Melbourne & Patty Wedding Invitation</title>
+  <style>
+    /* Reset margins and prevent the body from causing scrollbars */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #ffffff; /* Optional: sets a background color while loading */
+    }
+  </style>
 </head>
 <body>
   <iframe 
     src="https://script.google.com/macros/s/AKfycbxjPbYodT_GfFVByMJtfUYFNGfQbjWzqZ50m4E4WpEptDJ5ca4EZRGM9xpBLAbpNUH_/exec"
-    width="100%"
-    height="100%"
     allowfullscreen="true"
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
   </iframe>
 
   <script>
     window.onload = function() {
-      document.querySelector('iframe')
-        .requestFullscreen()
-        .catch((err) => {
-          console.error('Error attempting to enable full-screen mode:', err.message);
+      const iframe = document.querySelector('iframe');
+      // Adding a check to ensure the browser supports the method
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().catch((err) => {
+          console.warn('Fullscreen attempt blocked by browser:', err.message);
         });
+      }
     };
   </script>
 </body>
